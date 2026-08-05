@@ -1,0 +1,437 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Make Events</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        🎉 <span>Make Events</span>
+    </div>
+
+    <div class="nav-links">
+        <a href="{% url 'home' %}" class="active">Home</a>
+        <a href="#">Events</a>
+        <a href="#">Services</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+
+        <a href="#" class="book-btn">Book Event</a>
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <!-- Replace this image with your own -->
+    <img src="{% static 'images/hero.png' %}" alt="Event">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <h1>
+            Every Event Memorable & Stress-<br>
+            Free
+        </h1>
+
+        <p>
+            We plan, design, and manage unforgettable events with
+            professional execution and creative excellence.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#" class="btn primary-btn">View Events</a>
+            <a href="#" class="btn secondary-btn">Book Your Event</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="section features-section">
+
+    <h2>Our Features</h2>
+
+    <h3>Comprehensive Event Solutions</h3>
+
+    <p class="section-description">
+        From initial concept to final execution, we handle every detail
+        to ensure your event is a success.
+    </p>
+
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <div class="icon">▣</div>
+            <h4>Event Planning</h4>
+            <p>
+                Comprehensive planning from concept to execution.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">◉</div>
+            <h4>Event Design</h4>
+            <p>
+                Creative design to match your vision.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">♧</div>
+            <h4>Guest Management</h4>
+            <p>
+                Seamless management of guest lists and RSVPs.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">⚑</div>
+            <h4>Promotion & Marketing</h4>
+            <p>
+                Effective marketing to maximize attendance.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">◷</div>
+            <h4>On-Site Coordination</h4>
+            <p>
+                Professional coordination on the day of the event.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="icon">▣</div>
+            <h4>Budget Management</h4>
+            <p>
+                Efficient budget management to ensure cost-effectiveness.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="section why-section">
+
+    <h2>Why Choose Us</h2>
+
+    <h3>Trusted Event Professionals</h3>
+
+    <p class="section-description">
+        We are committed to delivering exceptional events with a focus
+        on quality, reliability, and client satisfaction.
+    </p>
+
+
+    <div class="why-grid">
+
+        <div class="why-card">
+            <div class="icon">☆</div>
+            <h4>Proven Expertise</h4>
+            <p>
+                Years of experience delivering exceptional events.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="icon">♢</div>
+            <h4>Reliable Service</h4>
+            <p>
+                Dependable service you can trust.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="icon">♧</div>
+            <h4>Client-Centric Approach</h4>
+            <p>
+                Tailored solutions to meet your specific needs.
+            </p>
+        </div>
+
+        <div class="why-card">
+            <div class="icon">◷</div>
+            <h4>Time-Saving Solutions</h4>
+            <p>
+                Efficient planning to save you time and effort.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EVENTS PREVIEW ================= -->
+
+<section class="section events-section">
+
+    <h2>Events Preview</h2>
+
+
+    <div class="events-grid">
+
+
+        <!-- EVENT 1 -->
+
+        <div class="event-card">
+
+            <img src="{% static 'images/event1.jpg' %}" alt="Tech Conference">
+
+            <div class="event-content">
+
+                <h4>Tech Conference 2024</h4>
+
+                <p>
+                    A gathering of tech innovators and industry leaders.
+                </p>
+
+                <a href="#" class="details-btn">
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 2 -->
+
+        <div class="event-card">
+
+            <img src="{% static 'images/event2.jpg' %}" alt="Corporate Events">
+
+            <div class="event-content">
+
+                <h4>Corporate Events</h4>
+
+                <p>
+                    Professional and impactful corporate gatherings.
+                </p>
+
+                <a href="#" class="details-btn">
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 3 -->
+
+        <div class="event-card">
+
+            <img src="{% static 'images/event3.jpg' %}" alt="Private Parties">
+
+            <div class="event-content">
+
+                <h4>Private Parties</h4>
+
+                <p>
+                    Memorable and fun private parties.
+                </p>
+
+                <a href="#" class="details-btn">
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 4 -->
+
+        <div class="event-card">
+
+            <img src="{% static 'images/event4.jpg' %}" alt="Festivals">
+
+            <div class="event-content">
+
+                <h4>Festivals</h4>
+
+                <p>
+                    Large-scale music and arts festivals.
+                </p>
+
+                <a href="#" class="details-btn">
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="section testimonials-section">
+
+    <h2>Testimonials</h2>
+
+
+    <div class="testimonial">
+
+        <div class="person">
+
+            <div class="avatar">👩</div>
+
+            <div>
+                <strong>Sophia Carter</strong>
+                <small>May 15, 2024</small>
+            </div>
+
+        </div>
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+            "Make Events made our wedding day absolutely perfect.
+            Their attention to detail and seamless execution allowed
+            us to fully enjoy our special day without any stress.
+            Highly recommend!"
+        </p>
+
+    </div>
+
+
+    <div class="testimonial">
+
+        <div class="person">
+
+            <div class="avatar">👨</div>
+
+            <div>
+                <strong>Ethan Bennett</strong>
+                <small>April 22, 2024</small>
+            </div>
+
+        </div>
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+            "We hired Make Events for our annual corporate conference,
+            and they exceeded our expectations. The event was
+            well-organized, professional, and received rave reviews
+            from our attendees."
+        </p>
+
+    </div>
+
+
+    <div class="testimonial">
+
+        <div class="person">
+
+            <div class="avatar">👩</div>
+
+            <div>
+                <strong>Olivia Hayes</strong>
+                <small>March 10, 2024</small>
+            </div>
+
+        </div>
+
+        <div class="stars">★★★★★</div>
+
+        <p>
+            "Make Events planned my 50th birthday party, and it was
+            a huge success. The team was creative, responsive, and
+            made every detail perfect. I couldn't have asked for a
+            better experience."
+        </p>
+
+    </div>
+
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <h2>Ready to Plan Your Next Event?</h2>
+
+    <p>
+        Let us help you create an unforgettable experience.
+        Contact us today to get started.
+    </p>
+
+    <a href="#" class="cta-button">
+        Book Your Event
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-links">
+
+        <a href="#">Home</a>
+        <a href="#">Events</a>
+        <a href="#">Services</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+
+    </div>
+
+    <div class="footer-links second">
+
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+
+    </div>
+
+
+    <div class="social">
+
+        <span>◎</span>
+        <span>ⓕ</span>
+        <span>♥</span>
+
+    </div>
+
+
+    <p class="copyright">
+        © 2024 Make Events. All rights reserved.
+    </p>
+
+</footer>
+
+</body>
+</html>
