@@ -1,0 +1,510 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #111827;
+
+    background: linear-gradient(
+        110deg,
+        #b99191,
+        #d9b59d,
+        #f8dda0
+    );
+}
+
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+
+    height: 42px;
+
+    background: #eee3a9;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 22px;
+
+    border-bottom: 1px solid #b18d49;
+}
+
+
+.logo {
+
+    font-family: cursive;
+
+    font-size: 13px;
+
+    color: #916b4c;
+}
+
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 27px;
+
+    font-size: 12px;
+}
+
+
+.nav-links a {
+
+    text-decoration: none;
+
+    color: #111;
+}
+
+
+.nav-links .active {
+
+    color: #741d2c;
+
+    font-weight: bold;
+}
+
+
+.book-btn {
+
+    color: white !important;
+
+    padding: 7px 12px;
+
+    border-radius: 6px;
+
+    background: linear-gradient(
+        90deg,
+        #731b2c,
+        #f1c74d
+    );
+
+    font-weight: bold;
+}
+
+
+
+/* ================= DETAIL PAGE ================= */
+
+.detail-page {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+    margin-top: 30px;
+    
+    padding-bottom: 50px;
+}
+
+
+
+/* ================= IMAGE ================= */
+
+.detail-image {
+
+    width: 100%;
+
+    height: 250px;
+
+   
+
+    display: block;
+
+    border-radius: 0 0 4px 4px;
+
+    margin-bottom: 15px;
+}
+
+
+
+/* ================= TITLE ================= */
+
+.detail-page h1 {
+
+    font-size: 27px;
+
+    margin-bottom: 6px;
+}
+
+
+.short-description {
+
+    font-size: 17px;
+
+    margin-bottom: 36px;
+}
+
+
+
+/* ================= BUTTONS ================= */
+
+.action-buttons {
+
+    display: flex;
+    
+    gap: 15px;
+    
+    margin-bottom: 20px;
+}
+
+
+.call-btn,
+.enquiry-btn {
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    padding: 10px 10px;
+
+    border-radius: 4px;
+}
+
+
+.call-btn {
+
+    background: linear-gradient(
+        90deg,
+        #f9e5a7,
+        #9a9581
+    );
+
+    color: #111;
+}
+
+
+.enquiry-btn {
+
+    background: linear-gradient(
+        90deg,
+        #731b2c,
+        #f1c74d
+    );
+
+    color: white;
+}
+
+
+
+/* ================= DESCRIPTION ================= */
+
+.description {
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+
+
+    padding: 5px;
+
+    margin-bottom: 25px;
+}
+
+
+
+/* ================= SERVICES ================= */
+
+.services {
+
+    margin-bottom: 45px;
+}
+
+
+.services h2,
+.highlights h2,
+.pricing h2 {
+
+    font-size: 15px;
+
+    margin-bottom: 22px;
+}
+
+
+.services ul {
+
+    list-style: none;
+}
+
+
+.services li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 12px;
+
+    margin-bottom: 17px;
+}
+
+
+.services li span {
+
+    width: 9px;
+
+    height: 9px;
+
+    display: inline-block;
+
+    background: linear-gradient(
+        90deg,
+        #f8e9ad,
+        #d9dda4
+    );
+
+    border-radius: 2px;
+}
+
+
+
+/* ================= HIGHLIGHTS ================= */
+
+.highlights {
+
+    margin-bottom: 20px;
+}
+
+
+.highlight-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+}
+
+
+.highlight-card {
+
+    min-height: 63px;
+
+    border: 1px solid #c09a50;
+
+    border-radius: 5px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 8px;
+
+    font-size: 12px;
+}
+
+
+.highlight-card span {
+
+    font-size: 12px;
+}
+
+
+.highlight-card strong {
+
+    font-size: 12px;
+}
+
+
+
+/* ================= PRICING ================= */
+
+.pricing {
+
+    margin-top: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.pricing h2 {
+
+    margin-bottom: 20px;
+}
+
+
+.pricing p {
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+
+/* ================= BOOK EVENT ================= */
+
+.book-event-btn {
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    padding: 7px 11px;
+
+    border-radius: 4px;
+
+    background: linear-gradient(
+        90deg,
+        #731b2c,
+        #f1c74d
+    );
+}
+
+
+
+/* ================= FOOTER ================= */
+
+.footer {
+
+    min-height: 165px;
+
+    background: linear-gradient(
+        100deg,
+        #ffd452,
+        #d4a936,
+        #e4ba3c
+    );
+
+    text-align: center;
+
+    padding-top: 30px;
+
+    border-top: 3px solid #a37c25;
+}
+
+
+.footer-top {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 75px;
+
+    margin-bottom: 20px;
+}
+
+
+.footer-top a {
+
+    text-decoration: none;
+
+    color: #111;
+
+    font-size: 10px;
+}
+
+
+.footer-middle {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 250px;
+
+    margin-bottom: 18px;
+}
+
+
+.footer-middle a {
+
+    text-decoration: none;
+
+    color: #111;
+
+    font-size: 10px;
+}
+
+
+.social-icons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+
+.social-icons span {
+
+    font-size: 17px;
+}
+
+
+.footer p {
+
+    font-size: 10px;
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 700px) {
+
+    .detail-page {
+
+        width: 90%;
+    }
+
+
+    .highlight-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .nav-links {
+
+        gap: 12px;
+
+        font-size: 10px;
+    }
+
+
+    .footer-top {
+
+        gap: 25px;
+
+        flex-wrap: wrap;
+    }
+
+
+    .footer-middle {
+
+        gap: 60px;
+    }
+
+}

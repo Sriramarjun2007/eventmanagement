@@ -1,12 +1,9 @@
-/* =========================
-   RESET
-========================= */
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -22,9 +19,7 @@ body {
 }
 
 
-/* =========================
-   NAVBAR
-========================= */
+/* ================= NAVBAR ================= */
 
 .navbar {
     height: 42px;
@@ -32,13 +27,16 @@ body {
     background: #eee3a9;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     padding: 0 22px;
 
     border-bottom: 1px solid #b18d49;
 }
+
 
 .logo {
     font-family: cursive;
@@ -48,14 +46,17 @@ body {
     color: #916b4c;
 }
 
+
 .nav-links {
     display: flex;
+
     align-items: center;
 
     gap: 27px;
 
     font-size: 12px;
 }
+
 
 .nav-links a {
     text-decoration: none;
@@ -65,15 +66,18 @@ body {
     transition: 0.2s;
 }
 
+
 .nav-links a:hover {
     color: #741d2c;
 }
+
 
 .nav-links .active {
     color: #741d2c;
 
     font-weight: bold;
 }
+
 
 .book-btn {
     color: white !important;
@@ -92,17 +96,19 @@ body {
 }
 
 
-/* =========================
-   EVENTS PAGE
-========================= */
+
+/* ================= EVENTS PAGE ================= */
 
 .events-page {
+
     padding: 42px 18px 55px;
 
     min-height: calc(100vh - 42px);
 }
 
+
 .events-page h1 {
+
     font-size: 18px;
 
     margin-left: 22px;
@@ -111,11 +117,11 @@ body {
 }
 
 
-/* =========================
-   FILTERS
-========================= */
+
+/* ================= FILTERS ================= */
 
 .filters {
+
     display: flex;
 
     gap: 16px;
@@ -125,7 +131,9 @@ body {
     margin-bottom: 58px;
 }
 
+
 .filters button {
+
     min-width: 96px;
 
     height: 20px;
@@ -145,27 +153,31 @@ body {
     cursor: pointer;
 }
 
+
 .filters button:nth-child(2) {
     min-width: 110px;
 }
 
+
 .filters button:nth-child(3) {
     min-width: 84px;
 }
+
 
 .filters button:nth-child(4) {
     min-width: 73px;
 }
 
 
-/* =========================
-   EVENTS GRID
-========================= */
+
+/* ================= EVENTS GRID ================= */
 
 .events-grid {
+
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns:
+        repeat(4, 1fr);
 
     column-gap: 27px;
 
@@ -173,11 +185,11 @@ body {
 }
 
 
-/* =========================
-   SQUARE EVENT CARD
-========================= */
+
+/* ================= SQUARE CARD ================= */
 
 .event-card {
+
     width: 100%;
 
     aspect-ratio: 1 / 1;
@@ -188,10 +200,20 @@ body {
 
     overflow: hidden;
 
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(
+        255,
+        255,
+        255,
+        0.08
+    );
 
     box-shadow:
-        0 1px 3px rgba(0, 0, 0, 0.15);
+        0 1px 3px rgba(
+            0,
+            0,
+            0,
+            0.15
+        );
 
     display: flex;
 
@@ -199,11 +221,11 @@ body {
 }
 
 
-/* =========================
-   EVENT IMAGE
-========================= */
+
+/* ================= EVENT IMAGE ================= */
 
 .event-card img {
+
     width: 100%;
 
     height: 56%;
@@ -214,11 +236,11 @@ body {
 }
 
 
-/* =========================
-   EVENT CONTENT
-========================= */
+
+/* ================= EVENT INFO ================= */
 
 .event-info {
+
     height: 44%;
 
     padding: 9px;
@@ -228,16 +250,20 @@ body {
     flex-direction: column;
 }
 
+
 .event-info h3 {
-    font-size: 10px;
+
+    font-size: 14px;
 
     font-weight: 600;
 
     margin-bottom: 5px;
 }
 
+
 .event-info p {
-    font-size: 8px;
+
+    font-size: 12px;
 
     color: #555;
 
@@ -249,16 +275,16 @@ body {
 }
 
 
-/* =========================
-   VIEW DETAILS BUTTON
-========================= */
+
+/* ================= DETAILS BUTTON ================= */
 
 .details-btn {
+
     display: block;
 
     width: 100%;
 
-    padding: 6px 5px;
+    padding: 10px 5px;
 
     text-align: center;
 
@@ -274,23 +300,25 @@ body {
 
     text-decoration: none;
 
-    font-size: 8px;
+    font-size: 12px;
 
     font-weight: bold;
 
     transition: 0.2s;
 }
 
+
 .details-btn:hover {
+
     opacity: 0.85;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+
+/* ================= FOOTER ================= */
 
 .footer {
+
     min-height: 165px;
 
     background: linear-gradient(
@@ -308,9 +336,8 @@ body {
 }
 
 
-/* FOOTER FIRST ROW */
-
 .footer-top {
+
     display: flex;
 
     justify-content: center;
@@ -322,7 +349,9 @@ body {
     margin-bottom: 20px;
 }
 
+
 .footer-top a {
+
     text-decoration: none;
 
     color: #111;
@@ -331,9 +360,8 @@ body {
 }
 
 
-/* FOOTER SECOND ROW */
-
 .footer-middle {
+
     display: flex;
 
     justify-content: center;
@@ -343,7 +371,9 @@ body {
     margin-bottom: 18px;
 }
 
+
 .footer-middle a {
+
     text-decoration: none;
 
     color: #111;
@@ -352,9 +382,8 @@ body {
 }
 
 
-/* SOCIAL ICONS */
-
 .social-icons {
+
     display: flex;
 
     justify-content: center;
@@ -366,55 +395,62 @@ body {
     margin-bottom: 18px;
 }
 
+
 .social-icons span {
+
     font-size: 17px;
 
     color: #111;
 }
 
 
-/* COPYRIGHT */
-
 .copyright {
+
     font-size: 10px;
 
     color: #111;
 }
 
 
-/* =========================
-   TABLET
-========================= */
+
+/* ================= TABLET ================= */
 
 @media (max-width: 900px) {
 
     .nav-links {
+
         gap: 15px;
 
         font-size: 11px;
     }
 
+
     .events-grid {
-        grid-template-columns: repeat(3, 1fr);
+
+        grid-template-columns:
+            repeat(3, 1fr);
 
         column-gap: 20px;
 
         row-gap: 40px;
     }
 
+
     .footer-middle {
+
         gap: 100px;
     }
+
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+
+/* ================= MOBILE ================= */
 
 @media (max-width: 650px) {
 
     .navbar {
+
         height: auto;
 
         padding: 10px;
@@ -424,7 +460,9 @@ body {
         gap: 10px;
     }
 
+
     .nav-links {
+
         flex-wrap: wrap;
 
         justify-content: center;
@@ -432,11 +470,15 @@ body {
         gap: 12px;
     }
 
+
     .events-page {
+
         padding: 30px 15px;
     }
 
+
     .filters {
+
         flex-wrap: wrap;
 
         margin-left: 0;
@@ -444,53 +486,72 @@ body {
         margin-bottom: 35px;
     }
 
+
     .events-grid {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+            repeat(2, 1fr);
 
         column-gap: 15px;
 
         row-gap: 25px;
     }
 
+
     .event-info h3 {
+
         font-size: 9px;
     }
 
+
     .event-info p {
+
         font-size: 7px;
     }
 
+
     .footer-top {
+
         gap: 20px;
 
         flex-wrap: wrap;
     }
 
+
     .footer-middle {
+
         gap: 50px;
     }
+
 }
 
 
-/* =========================
-   SMALL MOBILE
-========================= */
+
+/* ================= SMALL MOBILE ================= */
 
 @media (max-width: 400px) {
 
     .events-grid {
+
         grid-template-columns: 1fr;
     }
 
+
     .event-info h3 {
+
         font-size: 11px;
     }
 
+
     .event-info p {
+
         font-size: 9px;
     }
 
+
     .details-btn {
+
         font-size: 9px;
     }
+
 }

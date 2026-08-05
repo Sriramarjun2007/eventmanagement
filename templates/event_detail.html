@@ -1,0 +1,354 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {{ event.title }} - Make Events
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/event_detail.css' %}"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+
+    <div class="logo">
+
+        🎉 <span>Make Events</span>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="{% url 'home' %}">
+            Home
+        </a>
+
+        <a
+            href="{% url 'events' %}"
+            class="active"
+        >
+            Events
+        </a>
+
+        <a href="#">
+            Services
+        </a>
+
+        <a href="#">
+            About Us
+        </a>
+
+        <a href="#">
+            Contact
+        </a>
+
+        <a href="#" class="book-btn">
+            Book Event
+        </a>
+
+    </div>
+
+
+</nav>
+
+
+
+<!-- ================= EVENT DETAIL ================= -->
+
+<main class="detail-page">
+
+
+    <!-- IMAGE -->
+
+    <img
+        src="{% static event.image %}"
+        alt="{{ event.title }}"
+        class="detail-image"
+    >
+
+
+
+    <!-- TITLE -->
+
+    <h1>
+        {{ event.title }}
+    </h1>
+
+
+
+    <!-- SHORT DESCRIPTION -->
+
+    <p class="short-description">
+
+        {{ event.short_description }}
+
+    </p>
+
+
+
+    <!-- BUTTONS -->
+
+    <div class="action-buttons">
+
+        <a
+            href="tel:+919876543210"
+            class="call-btn"
+        >
+            📞 Call Now
+        </a>
+
+
+        <a
+            href="#"
+            class="enquiry-btn"
+        >
+            Enquiry Form
+        </a>
+
+    </div>
+
+
+
+    <!-- DESCRIPTION -->
+
+    <div class="description">
+
+        {{ event.description }}
+
+    </div>
+
+
+
+    <!-- SERVICES -->
+
+    <section class="services">
+
+        <h2>
+            Services Included
+        </h2>
+
+
+        <ul>
+
+            {% for service in event.services %}
+
+            <li>
+
+                <span></span>
+
+                {{ service }}
+
+            </li>
+
+            {% endfor %}
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- EVENT HIGHLIGHTS -->
+
+    <section class="highlights">
+
+
+        <h2>
+            Event Highlights
+        </h2>
+
+
+        <div class="highlight-grid">
+
+
+            <div class="highlight-card">
+
+                <span>
+                    ♧
+                </span>
+
+                <strong>
+                    {{ event.attendees }}
+                </strong>
+
+            </div>
+
+
+
+            <div class="highlight-card">
+
+                <span>
+                    ▢
+                </span>
+
+                <strong>
+                    {{ event.speakers }}
+                </strong>
+
+            </div>
+
+
+
+            <div class="highlight-card">
+
+                <span>
+                    ▣
+                </span>
+
+                <strong>
+                    {{ event.duration }}
+                </strong>
+
+            </div>
+
+
+
+            <div class="highlight-card">
+
+                <span>
+                    ⌖
+                </span>
+
+                <strong>
+                    {{ event.venue }}
+                </strong>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- PRICING -->
+
+    <section class="pricing">
+
+
+        <h2>
+            Sample Pricing
+        </h2>
+
+
+        <p>
+
+            Pricing varies based on the services selected and
+            the scale of the event. Contact us for a detailed
+            quote tailored to your specific needs.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- BOOK -->
+
+    <a
+        href="#"
+        class="book-event-btn"
+    >
+        Book This Event
+    </a>
+
+
+</main>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+
+    <div class="footer-top">
+
+        <a href="{% url 'home' %}">
+            Home
+        </a>
+
+        <a href="{% url 'events' %}">
+            Events
+        </a>
+
+        <a href="#">
+            Services
+        </a>
+
+        <a href="#">
+            About Us
+        </a>
+
+        <a href="#">
+            Contact
+        </a>
+
+    </div>
+
+
+
+    <div class="footer-middle">
+
+        <a href="#">
+            Privacy Policy
+        </a>
+
+        <a href="#">
+            Terms of Service
+        </a>
+
+    </div>
+
+
+
+    <div class="social-icons">
+
+        <span>◎</span>
+
+        <span>ⓕ</span>
+
+        <span>𝕏</span>
+
+    </div>
+
+
+
+    <p class="copyright">
+
+        © 2024 Make Events. All rights reserved.
+
+    </p>
+
+
+</footer>
+
+
+</body>
+
+</html>

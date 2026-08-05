@@ -2,16 +2,28 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Events - Make Events</title>
 
-    <link rel="stylesheet" href="{% static 'css/event.css' %}">
+    <link
+        rel="stylesheet"
+        href="{% static 'css/event.css' %}"
+    >
+
 </head>
 
+
 <body>
+
 
 <!-- ================= NAVBAR ================= -->
 
@@ -21,23 +33,50 @@
         🎉 <span>Make Events</span>
     </div>
 
+
     <div class="nav-links">
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'events' %}" class="active">Events</a>
-        <a href="#">Services</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-        <a href="#" class="book-btn">Book Event</a>
+
+        <a href="{% url 'home' %}">
+            Home
+        </a>
+
+        <a
+            href="{% url 'events' %}"
+            class="active"
+        >
+            Events
+        </a>
+
+        <a href="#">
+            Services
+        </a>
+
+        <a href="#">
+            About Us
+        </a>
+
+        <a href="#">
+            Contact
+        </a>
+
+        <a href="#" class="book-btn">
+            Book Event
+        </a>
+
     </div>
 
 </nav>
 
 
-<!-- ================= EVENTS ================= -->
+
+<!-- ================= EVENTS PAGE ================= -->
 
 <main class="events-page">
 
-    <h1>Events</h1>
+
+    <h1>
+        Events
+    </h1>
 
 
     <!-- FILTERS -->
@@ -63,333 +102,134 @@
     </div>
 
 
-    <!-- EVENTS GRID -->
+
+    <!-- EVENTS -->
 
     <div class="events-grid">
 
 
-        <!-- 1 -->
+        {% for event_id, event in events.items %}
+
 
         <div class="event-card">
 
-            <img src="{% static 'images/event1.jpg' %}">
+
+            <!-- IMAGE -->
+
+            <img
+                src="{% static event.image %}"
+                alt="{{ event.title }}"
+            >
+
+
+            <!-- CONTENT -->
 
             <div class="event-info">
 
-                <h3>Tech Conference 2024</h3>
+
+                <h3>
+                    {{ event.title }}
+                </h3>
+
 
                 <p>
-                    A gathering of tech innovators and industry leaders.
+                    {{ event.short_description }}
                 </p>
 
-                <a href="#" class="details-btn">
+
+                <!-- VIEW DETAILS -->
+
+                <a
+                    href="{% url 'event_detail' event_id %}"
+                    class="details-btn"
+                >
                     View Details
                 </a>
 
+
             </div>
+
 
         </div>
 
 
-        <!-- 2 -->
+        {% endfor %}
 
-        <div class="event-card">
-
-            <img src="{% static 'images/event2.jpg' %}">
-
-            <div class="event-info">
-
-                <h3>Corporate Events</h3>
-
-                <p>
-                    Professional and impactful corporate gatherings.
-                </p>
-
-                <a href="#" class="details-btn">
-                    View Details
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 3 -->
-
-        <div class="event-card">
-
-            <img src="{% static 'images/event3.jpg' %}">
-
-            <div class="event-info">
-
-                <h3>Private Parties</h3>
-
-                <p>
-                    Memorable and fun private parties.
-                </p>
-
-                <a href="#" class="details-btn">
-                    View Details
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 4 -->
-
-        <div class="event-card">
-
-            <img src="{% static 'images/event4.jpg' %}">
-
-            <div class="event-info">
-
-                <h3>Festivals</h3>
-
-                <p>
-                    Large-scale music and arts festivals.
-                </p>
-
-                <a href="#" class="details-btn">
-                    View Details
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 5 -->
-
-        <div class="event-card">
-
-            <img src="{% static 'images/event5.jpg' %}">
-
-            <div class="event-info">
-
-                <h3>Weddings</h3>
-
-                <p>
-                    Elegant and personalized wedding celebrations.
-                </p>
-
-                <a href="#" class="details-btn">
-                    View Details
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 6 -->
-
-        <div class="event-card">
-
-            <img src="{% static 'images/event6.jpg' %}">
-
-            <div class="event-info">
-
-                <h3>Summer Music Festival</h3>
-
-                <p>
-                    An outdoor celebration of music and community.
-                </p>
-
-                <a href="#" class="details-btn">
-                    View Details
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 7 -->
-
-        <div class="event-card">
-
-            <img src="{% static 'images/event7.jpg' %}">
-
-            <div class="event-info">
-
-                <h3>Corporate Gala Night</h3>
-
-                <p>
-                    An elegant evening for networking and recognition.
-                </p>
-
-                <a href="#" class="details-btn">
-                    View Details
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 8 -->
-
-        <div class="event-card">
-
-            <img src="{% static 'images/event8.jpg' %}">
-
-            <div class="event-info">
-
-                <h3>Art Exhibition Opening</h3>
-
-                <p>
-                    Showcasing contemporary art from emerging artists.
-                </p>
-
-                <a href="#" class="details-btn">
-                    View Details
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 9 -->
-
-        <div class="event-card">
-
-            <img src="{% static 'images/event9.jpg' %}">
-
-            <div class="event-info">
-
-                <h3>Charity Auction Event</h3>
-
-                <p>
-                    Raising funds for a noble cause with exclusive items.
-                </p>
-
-                <a href="#" class="details-btn">
-                    View Details
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 10 -->
-
-        <div class="event-card">
-
-            <img src="{% static 'images/event10.jpg' %}">
-
-            <div class="event-info">
-
-                <h3>Food & Wine Tasting</h3>
-
-                <p>
-                    A culinary journey with fine wines and gourmet dishes.
-                </p>
-
-                <a href="#" class="details-btn">
-                    View Details
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 11 -->
-
-        <div class="event-card">
-
-            <img src="{% static 'images/event11.jpg' %}">
-
-            <div class="event-info">
-
-                <h3>Name Ceremony</h3>
-
-                <p>
-                    Memorable and fun private parties.
-                </p>
-
-                <a href="#" class="details-btn">
-                    View Details
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- 12 -->
-
-        <div class="event-card">
-
-            <img src="{% static 'images/event12.jpg' %}">
-
-            <div class="event-info">
-
-                <h3>Baby Shower</h3>
-
-                <p>
-                    Large-scale music and arts festivals.
-                </p>
-
-                <a href="#" class="details-btn">
-                    View Details
-                </a>
-
-            </div>
-
-        </div>
 
     </div>
 
+
 </main>
+
 
 
 <!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
+
     <div class="footer-top">
 
-        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'home' %}">
+            Home
+        </a>
 
-        <a href="{% url 'events' %}">Events</a>
+        <a href="{% url 'events' %}">
+            Events
+        </a>
 
-        <a href="#">Services</a>
+        <a href="#">
+            Services
+        </a>
 
-        <a href="#">About Us</a>
+        <a href="#">
+            About Us
+        </a>
 
-        <a href="#">Contact</a>
+        <a href="#">
+            Contact
+        </a>
 
     </div>
+
 
 
     <div class="footer-middle">
 
-        <a href="#">Privacy Policy</a>
+        <a href="#">
+            Privacy Policy
+        </a>
 
-        <a href="#">Terms of Service</a>
+        <a href="#">
+            Terms of Service
+        </a>
 
     </div>
+
 
 
     <div class="social-icons">
 
         <span>◎</span>
+
         <span>ⓕ</span>
+
         <span>𝕏</span>
 
     </div>
 
 
+
     <p class="copyright">
+
         © 2024 Make Events. All rights reserved.
+
     </p>
+
 
 </footer>
 
+
 </body>
+
 </html>
