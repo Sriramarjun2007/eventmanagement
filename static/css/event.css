@@ -1,0 +1,496 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #111827;
+
+    background: linear-gradient(
+        110deg,
+        #b99191,
+        #d9b59d,
+        #f8dda0
+    );
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 42px;
+
+    background: #eee3a9;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 22px;
+
+    border-bottom: 1px solid #b18d49;
+}
+
+.logo {
+    font-family: cursive;
+
+    font-size: 13px;
+
+    color: #916b4c;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 27px;
+
+    font-size: 12px;
+}
+
+.nav-links a {
+    text-decoration: none;
+
+    color: #111;
+
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #741d2c;
+}
+
+.nav-links .active {
+    color: #741d2c;
+
+    font-weight: bold;
+}
+
+.book-btn {
+    color: white !important;
+
+    padding: 7px 12px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    background: linear-gradient(
+        90deg,
+        #731b2c,
+        #f1c74d
+    );
+}
+
+
+/* =========================
+   EVENTS PAGE
+========================= */
+
+.events-page {
+    padding: 42px 18px 55px;
+
+    min-height: calc(100vh - 42px);
+}
+
+.events-page h1 {
+    font-size: 18px;
+
+    margin-left: 22px;
+
+    margin-bottom: 26px;
+}
+
+
+/* =========================
+   FILTERS
+========================= */
+
+.filters {
+    display: flex;
+
+    gap: 16px;
+
+    margin-left: 18px;
+
+    margin-bottom: 58px;
+}
+
+.filters button {
+    min-width: 96px;
+
+    height: 20px;
+
+    padding: 0 10px;
+
+    border: 1px solid #7c3944;
+
+    border-radius: 5px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: #111;
+
+    font-size: 9px;
+
+    cursor: pointer;
+}
+
+.filters button:nth-child(2) {
+    min-width: 110px;
+}
+
+.filters button:nth-child(3) {
+    min-width: 84px;
+}
+
+.filters button:nth-child(4) {
+    min-width: 73px;
+}
+
+
+/* =========================
+   EVENTS GRID
+========================= */
+
+.events-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    column-gap: 27px;
+
+    row-gap: 60px;
+}
+
+
+/* =========================
+   SQUARE EVENT CARD
+========================= */
+
+.event-card {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    border: 1px solid #9d5260;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =========================
+   EVENT IMAGE
+========================= */
+
+.event-card img {
+    width: 100%;
+
+    height: 56%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   EVENT CONTENT
+========================= */
+
+.event-info {
+    height: 44%;
+
+    padding: 9px;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.event-info h3 {
+    font-size: 10px;
+
+    font-weight: 600;
+
+    margin-bottom: 5px;
+}
+
+.event-info p {
+    font-size: 8px;
+
+    color: #555;
+
+    line-height: 1.45;
+
+    margin-bottom: 7px;
+
+    flex: 1;
+}
+
+
+/* =========================
+   VIEW DETAILS BUTTON
+========================= */
+
+.details-btn {
+    display: block;
+
+    width: 100%;
+
+    padding: 6px 5px;
+
+    text-align: center;
+
+    border-radius: 5px;
+
+    background: linear-gradient(
+        90deg,
+        #f9e5a7,
+        #9a9581
+    );
+
+    color: #111;
+
+    text-decoration: none;
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+}
+
+.details-btn:hover {
+    opacity: 0.85;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    min-height: 165px;
+
+    background: linear-gradient(
+        100deg,
+        #ffd452,
+        #d4a936,
+        #e4ba3c
+    );
+
+    text-align: center;
+
+    padding-top: 30px;
+
+    border-top: 3px solid #a37c25;
+}
+
+
+/* FOOTER FIRST ROW */
+
+.footer-top {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 75px;
+
+    margin-bottom: 20px;
+}
+
+.footer-top a {
+    text-decoration: none;
+
+    color: #111;
+
+    font-size: 10px;
+}
+
+
+/* FOOTER SECOND ROW */
+
+.footer-middle {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 250px;
+
+    margin-bottom: 18px;
+}
+
+.footer-middle a {
+    text-decoration: none;
+
+    color: #111;
+
+    font-size: 10px;
+}
+
+
+/* SOCIAL ICONS */
+
+.social-icons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.social-icons span {
+    font-size: 17px;
+
+    color: #111;
+}
+
+
+/* COPYRIGHT */
+
+.copyright {
+    font-size: 10px;
+
+    color: #111;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .nav-links {
+        gap: 15px;
+
+        font-size: 11px;
+    }
+
+    .events-grid {
+        grid-template-columns: repeat(3, 1fr);
+
+        column-gap: 20px;
+
+        row-gap: 40px;
+    }
+
+    .footer-middle {
+        gap: 100px;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        height: auto;
+
+        padding: 10px;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px;
+    }
+
+    .events-page {
+        padding: 30px 15px;
+    }
+
+    .filters {
+        flex-wrap: wrap;
+
+        margin-left: 0;
+
+        margin-bottom: 35px;
+    }
+
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        column-gap: 15px;
+
+        row-gap: 25px;
+    }
+
+    .event-info h3 {
+        font-size: 9px;
+    }
+
+    .event-info p {
+        font-size: 7px;
+    }
+
+    .footer-top {
+        gap: 20px;
+
+        flex-wrap: wrap;
+    }
+
+    .footer-middle {
+        gap: 50px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .event-info h3 {
+        font-size: 11px;
+    }
+
+    .event-info p {
+        font-size: 9px;
+    }
+
+    .details-btn {
+        font-size: 9px;
+    }
+}
