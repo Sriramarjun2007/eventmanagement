@@ -7,17 +7,13 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Events - Make Events</title>
 
-    <link
-        rel="stylesheet"
-        href="{% static 'css/event.css' %}"
-    >
+    <link rel="stylesheet"
+          href="{% static 'css/event.css' %}">
 
 </head>
 
@@ -27,23 +23,21 @@
 
 <!-- ================= NAVBAR ================= -->
 
-<nav class="navbar">
+<header class="navbar">
 
     <div class="logo">
         🎉 <span>Make Events</span>
     </div>
 
 
-    <div class="nav-links">
+    <nav class="nav-links">
 
         <a href="{% url 'home' %}">
             Home
         </a>
 
-        <a
-            href="{% url 'events' %}"
-            class="active"
-        >
+        <a href="{% url 'events' %}"
+           class="active">
             Events
         </a>
 
@@ -59,51 +53,195 @@
             Contact
         </a>
 
-        <a href="#" class="book-btn">
+        <a href="#"
+           class="book-btn">
             Book Event
         </a>
 
-    </div>
+    </nav>
 
-</nav>
+</header>
 
 
 
-<!-- ================= EVENTS PAGE ================= -->
+<!-- ================= MAIN ================= -->
 
 <main class="events-page">
 
 
-    <h1>
-        Events
-    </h1>
+    <h1>Events</h1>
 
 
-    <!-- FILTERS -->
+
+    <!-- ================= FILTERS ================= -->
 
     <div class="filters">
 
-        <button>
-            Event Type⌄
+
+        <!-- EVENT TYPE -->
+
+        <div class="filter-box">
+
+            <select id="eventTypeFilter"
+                    onchange="filterEvents()">
+
+                <option value="">
+                    Event Type
+                </option>
+
+                <option value="Wedding">
+                    Wedding
+                </option>
+
+                <option value="Engagement">
+                    Engagement
+                </option>
+
+                <option value="Birthday party">
+                    Birthday Party
+                </option>
+
+                <option value="Baby Shower">
+                    Baby Shower
+                </option>
+
+                <option value="Corporate Event">
+                    Corporate Event
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- BUDGET -->
+
+        <div class="filter-box">
+
+            <select id="budgetFilter"
+                    onchange="filterEvents()">
+
+                <option value="">
+                    Budget Range
+                </option>
+
+                <option value="Below-50,000">
+                    Below ₹50,000
+                </option>
+
+                <option value="50000-100000">
+                    ₹50,000 - ₹1,00,000
+                </option>
+
+                <option value="100000-200000">
+                    ₹1,00,000 - ₹2,00,000
+                </option>
+
+                <option value="200000-500000">
+                    ₹2,00,000 - ₹5,00,000
+                </option>
+
+                <option value="Above-500000">
+                    Above ₹5,00,000
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- LOCATION -->
+
+        <div class="filter-box">
+
+            <select id="locationFilter"
+                    onchange="filterEvents()">
+
+                <option value="">
+                    Location
+                </option>
+
+                <option value="Chennai">
+                    Chennai
+                </option>
+
+                <option value="Bangalore">
+                    Bangalore
+                </option>
+
+                <option value="Coimbatore">
+                    Coimbatore
+                </option>
+
+                <option value="Madurai">
+                    Madurai
+                </option>
+
+                <option value="Salem">
+                    Salem
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- VENUE -->
+
+        <div class="filter-box">
+
+            <select id="venueFilter"
+                    onchange="filterEvents()">
+
+                <option value="">
+                    Venue
+                </option>
+
+                <option value="Banquet Hall">
+                    Banquet Hall
+                </option>
+
+                <option value="Convention Center">
+                    Convention Center
+                </option>
+
+                <option value="Outdoor / Open Ground">
+                    Outdoor / Open Ground
+                </option>
+
+                <option value="Hotel">
+                    Hotel
+                </option>
+
+                <option value="Beach / resort">
+                    Beach / Resort
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- RESET -->
+
+        <button type="button"
+                class="reset-filter"
+                onclick="resetFilters()">
+
+            Reset
+
         </button>
 
-        <button>
-            Budget Range⌄
-        </button>
-
-        <button>
-            Location⌄
-        </button>
-
-        <button>
-            venue⌄
-        </button>
 
     </div>
 
 
 
-    <!-- EVENTS -->
+    <!-- ================= EVENTS ================= -->
 
     <div class="events-grid">
 
@@ -111,18 +249,29 @@
         {% for event_id, event in events.items %}
 
 
-        <div class="event-card">
+        <div class="event-card"
+
+             data-type="{{ event.type }}"
+
+             data-budget="{{ event.budget }}"
+
+             data-location="{{ event.location }}"
+
+             data-venue="{{ event.venue_type }}">
 
 
             <!-- IMAGE -->
 
-            <img
-                src="{% static event.image %}"
-                alt="{{ event.title }}"
-            >
+            <div class="event-image">
+
+                <img src="{% static event.image %}"
+                     alt="{{ event.title }}">
+
+            </div>
 
 
-            <!-- CONTENT -->
+
+            <!-- INFORMATION -->
 
             <div class="event-info">
 
@@ -137,18 +286,32 @@
                 </p>
 
 
-                <!-- VIEW DETAILS -->
+                <a href="{% url 'event_detail' event_id %}"
+                   class="details-btn">
 
-                <a
-                    href="{% url 'event_detail' event_id %}"
-                    class="details-btn"
-                >
                     View Details
+
                 </a>
 
 
             </div>
 
+
+        </div>
+
+
+        {% empty %}
+
+
+        <div class="no-events">
+
+            <h2>
+                No events available
+            </h2>
+
+            <p>
+                Please check again later.
+            </p>
 
         </div>
 
@@ -170,25 +333,31 @@
 
     <div class="footer-top">
 
+
         <a href="{% url 'home' %}">
             Home
         </a>
+
 
         <a href="{% url 'events' %}">
             Events
         </a>
 
+
         <a href="#">
             Services
         </a>
+
 
         <a href="#">
             About Us
         </a>
 
+
         <a href="#">
             Contact
         </a>
+
 
     </div>
 
@@ -196,13 +365,16 @@
 
     <div class="footer-middle">
 
+
         <a href="#">
             Privacy Policy
         </a>
 
+
         <a href="#">
             Terms of Service
         </a>
+
 
     </div>
 
@@ -228,6 +400,173 @@
 
 
 </footer>
+
+
+
+<!-- ================= FILTER JAVASCRIPT ================= -->
+
+<script>
+
+
+function filterEvents() {
+
+
+    /* Get selected values */
+
+    const selectedType =
+        document.getElementById(
+            "eventTypeFilter"
+        ).value;
+
+
+    const selectedBudget =
+        document.getElementById(
+            "budgetFilter"
+        ).value;
+
+
+    const selectedLocation =
+        document.getElementById(
+            "locationFilter"
+        ).value;
+
+
+    const selectedVenue =
+        document.getElementById(
+            "venueFilter"
+        ).value;
+
+
+
+    /* Get all cards */
+
+    const cards =
+        document.querySelectorAll(
+            ".event-card"
+        );
+
+
+
+    cards.forEach(function(card) {
+
+
+        const eventType =
+            card.dataset.type;
+
+
+        const eventBudget =
+            card.dataset.budget;
+
+
+        const eventLocation =
+            card.dataset.location;
+
+
+        const eventVenue =
+            card.dataset.venue;
+
+
+
+        /* Type */
+
+        const typeMatch =
+            selectedType === "" ||
+            eventType === selectedType;
+
+
+
+        /* Budget */
+
+        const budgetMatch =
+            selectedBudget === "" ||
+            eventBudget === selectedBudget;
+
+
+
+        /* Location */
+
+        const locationMatch =
+            selectedLocation === "" ||
+            eventLocation === selectedLocation;
+
+
+
+        /* Venue */
+
+        const venueMatch =
+            selectedVenue === "" ||
+            eventVenue === selectedVenue;
+
+
+
+        /* Show / hide */
+
+        if (
+            typeMatch &&
+            budgetMatch &&
+            locationMatch &&
+            venueMatch
+        ) {
+
+            card.style.display = "flex";
+
+        }
+
+        else {
+
+            card.style.display = "none";
+
+        }
+
+
+    });
+
+}
+
+
+
+/* ================= RESET ================= */
+
+function resetFilters() {
+
+
+    document.getElementById(
+        "eventTypeFilter"
+    ).value = "";
+
+
+    document.getElementById(
+        "budgetFilter"
+    ).value = "";
+
+
+    document.getElementById(
+        "locationFilter"
+    ).value = "";
+
+
+    document.getElementById(
+        "venueFilter"
+    ).value = "";
+
+
+
+    const cards =
+        document.querySelectorAll(
+            ".event-card"
+        );
+
+
+    cards.forEach(function(card) {
+
+        card.style.display = "flex";
+
+    });
+
+}
+
+
+</script>
 
 
 </body>
