@@ -375,3 +375,15 @@ def event_detail(request, event_id):
     )
 def book(request):
  return render(request, "book.html")
+def conatct(request):
+ return render(request, "contact.html")
+def services(request):
+    return render(
+        request,
+        "services.html",
+        {
+            "events": EVENTS
+        }
+    )
+def about(request):
+    return render(request, "about.html")    

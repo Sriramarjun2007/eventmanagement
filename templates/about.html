@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Events - About Us</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icon">🍓</span> Make Events
+        </div>
+        <nav class="nav-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'events' %}">Events</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'about' %}" class="active">About Us</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="{% url 'book' %}" class="btn-book">Book Event</a>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main class="main-container">
+        <div class="about-card">
+            <h1>About Us</h1>
+            <p class="subtitle">Learn more about our company and our commitment to creating unforgettable events.</p>
+
+            <!-- Our Story -->
+            <section class="about-section">
+                <h2>Our Story</h2>
+                <p>Founded in 2010, MASTER PROMOTE began as a small team of passionate event planners with a vision to transform ordinary gatherings into extraordinary experiences. Over the years, we've grown into a leading event management company, known for our creativity, attention to detail, and commitment to client satisfaction. Our journey has been marked by countless successful events, ranging from intimate celebrations to large-scale corporate functions, each reflecting our dedication to excellence.</p>
+            </section>
+
+            <!-- Our Mission & Vision -->
+            <section class="about-section">
+                <h2>Our Mission & Vision</h2>
+                <p>Our mission is to craft exceptional events that exceed expectations and leave a lasting impression. We envision a world where every event is a seamless, memorable experience, meticulously planned and flawlessly executed. We strive to be the premier choice for event management, recognized for our innovative approach, personalized service, and unwavering commitment to quality.</p>
+            </section>
+
+            <!-- Years of Experience -->
+            <section class="about-section">
+                <h2>Years of Experience</h2>
+                <div class="experience-box">
+                    <span class="exp-label">Years of Experience</span>
+                    <span class="exp-number">14</span>
+                </div>
+            </section>
+
+            <!-- Our Team -->
+            <section class="about-section">
+                <h2>Our Team</h2>
+                <p class="team-intro">Our team is composed of seasoned professionals with diverse backgrounds in event planning, design, logistics, and marketing. Each member brings a unique set of skills and expertise, united by a shared passion for creating exceptional events. We foster a collaborative environment where creativity thrives, and every event benefits from our collective knowledge and experience.</p>
+                
+                <div class="team-grid">
+    <div class="team-member">
+        <img src="{% static 'images/emily.jpg' %}" alt="Emily Carter" class="member-img">
+        <h3>Emily Carter</h3>
+        <p>Lead Event Planner</p>
+    </div>
+    <div class="team-member">
+        <img src="{% static 'images/david.jpg' %}" alt="David Lee" class="member-img">
+        <h3>David Lee</h3>
+        <p>Creative Director</p>
+    </div>
+    <div class="team-member">
+        <img src="{% static 'images/sophia.jpg' %}" alt="Sophia Clark" class="member-img">
+        <h3>Sophia Clark</h3>
+        <p>Logistics Manager</p>
+    </div>
+</div>
+            </section>
+
+            <!-- Why Choose Us? -->
+            <section class="about-section">
+                <h2>Why Choose Us?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="check-icon">&#10003;</div>
+                        <h3>Expertise and Experience</h3>
+                        <p>With over 14 years in the industry, we have the knowledge and skills to handle events of any size and complexity.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="check-icon">&#10003;</div>
+                        <h3>Personalized Service</h3>
+                        <p>We take the time to understand your unique needs and preferences, tailoring our services to create a truly personalized experience.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="check-icon">&#10003;</div>
+                        <h3>Attention to Detail</h3>
+                        <p>From the smallest details to the grandest gestures, we ensure every aspect of your event is perfect.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="check-icon">&#10003;</div>
+                        <h3>Proven Track Record</h3>
+                        <p>Our portfolio of successful events speaks for itself, demonstrating our commitment to delivering exceptional results.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom Booking CTA Button -->
+            <div class="center-btn">
+                <a href="{% url 'book' %}" class="btn-book-large">Book Event</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links-top">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'events' %}">Events</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'about' %}">About Us</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </div>
+        <div class="footer-links-sub">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <p class="copyright">&copy; 2024 Master Promote. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
