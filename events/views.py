@@ -1,5 +1,10 @@
+
 from django.shortcuts import render
 
+
+# ============================================================
+# EVENTS DATA
+# ============================================================
 
 EVENTS = {
 
@@ -30,7 +35,6 @@ EVENTS = {
         "venue": "Downtown Convention Center",
     },
 
-
     2: {
         "title": "Corporate Events",
         "type": "Corporate Event",
@@ -57,7 +61,6 @@ EVENTS = {
         "duration": "1-Day Event",
         "venue": "Business Convention Center",
     },
-
 
     3: {
         "title": "Private Parties",
@@ -86,7 +89,6 @@ EVENTS = {
         "venue": "Private Celebration Hall",
     },
 
-
     4: {
         "title": "Festivals",
         "type": "Corporate Event",
@@ -113,7 +115,6 @@ EVENTS = {
         "duration": "3-Day Event",
         "venue": "City Festival Grounds",
     },
-
 
     5: {
         "title": "Weddings",
@@ -142,7 +143,6 @@ EVENTS = {
         "venue": "Grand Wedding Hall",
     },
 
-
     6: {
         "title": "Summer Music Festival",
         "type": "Engagement",
@@ -169,7 +169,6 @@ EVENTS = {
         "duration": "3-Day Event",
         "venue": "Outdoor Festival Ground",
     },
-
 
     7: {
         "title": "Corporate Gala Night",
@@ -198,7 +197,6 @@ EVENTS = {
         "venue": "Grand Convention Hall",
     },
 
-
     8: {
         "title": "Art Exhibition Opening",
         "type": "Corporate Event",
@@ -225,7 +223,6 @@ EVENTS = {
         "duration": "2-Day Event",
         "venue": "Modern Art Gallery",
     },
-
 
     9: {
         "title": "Charity Auction Event",
@@ -254,7 +251,6 @@ EVENTS = {
         "venue": "Community Convention Hall",
     },
 
-
     10: {
         "title": "Food & Wine Tasting",
         "type": "Engagement",
@@ -282,7 +278,6 @@ EVENTS = {
         "venue": "Luxury Dining Hall",
     },
 
-
     11: {
         "title": "Name Ceremony",
         "type": "Baby Shower",
@@ -309,7 +304,6 @@ EVENTS = {
         "duration": "1-Day Event",
         "venue": "Celebration Hall",
     },
-
 
     12: {
         "title": "Baby Shower",
@@ -341,11 +335,24 @@ EVENTS = {
 }
 
 
-def home(request):
-    return render(request, "index.html")
+# ============================================================
+# HOME
+# ============================================================
 
+def home(request):
+
+    return render(
+        request,
+        "index.html"
+    )
+
+
+# ============================================================
+# EVENTS
+# ============================================================
 
 def events(request):
+
     return render(
         request,
         "events.html",
@@ -355,11 +362,16 @@ def events(request):
     )
 
 
+# ============================================================
+# EVENT DETAIL
+# ============================================================
+
 def event_detail(request, event_id):
 
     event = EVENTS.get(event_id)
 
     if event is None:
+
         return render(
             request,
             "404.html",
@@ -373,11 +385,101 @@ def event_detail(request, event_id):
             "event": event
         }
     )
+
+
+# ============================================================
+# BOOKING
+# ============================================================
+
 def book(request):
- return render(request, "book.html")
+
+    # --------------------------------------------
+    # OPEN BOOKING PAGE
+    # --------------------------------------------
+
+    if request.method == "GET":
+
+        return render(
+            request,
+            "book.html"
+        )
+
+
+    # --------------------------------------------
+    # SUBMIT BOOKING
+    # --------------------------------------------
+
+    if request.method == "POST":
+
+        booking = {
+
+            "name": request.POST.get(
+                "name",
+                ""
+            ),
+
+            "phone": request.POST.get(
+                "phone",
+                ""
+            ),
+
+            "email": request.POST.get(
+                "email",
+                ""
+            ),
+
+            "event_type": request.POST.get(
+                "event_type",
+                ""
+            ),
+
+            "event_date": request.POST.get(
+                "event_date",
+                ""
+            ),
+
+            "location": request.POST.get(
+                "location",
+                ""
+            ),
+
+            "message": request.POST.get(
+                "message",
+                ""
+            ),
+
+        }
+
+
+        # Show confirmation page
+
+        return render(
+            request,
+            "booking_confirmation.html",
+            {
+                "booking": booking
+            }
+        )
+
+
+# ============================================================
+# CONTACT
+# ============================================================
+
 def conatct(request):
- return render(request, "contact.html")
+
+    return render(
+        request,
+        "contact.html"
+    )
+
+
+# ============================================================
+# SERVICES
+# ============================================================
+
 def services(request):
+
     return render(
         request,
         "services.html",
@@ -385,5 +487,16 @@ def services(request):
             "events": EVENTS
         }
     )
+
+
+# ============================================================
+# ABOUT
+# ============================================================
+
 def about(request):
-    return render(request, "about.html")    
+
+    return render(
+        request,
+        "about.html"
+    )
+
